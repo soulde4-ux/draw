@@ -1,12 +1,20 @@
-// Backend server code
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello from the backend!');
+app.use(cors());
+app.use(express.json());
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
-const PORT = process.env.PORT || 3000;
+app.post("/projects", (req, res) => {
+  res.json({ saved: true, data: req.body });
+});
+
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log("Backend running on", PORT);
 });
