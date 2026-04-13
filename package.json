@@ -1,0 +1,10 @@
+{
+   "name": "draw",
+   "version": "1.0.0",
+   "dependencies": {
+      "express": "^4.17.1",
+      "webpack": "^5.0.0",
+      "three": "^0.125.2"
+      // Add other dependencies as needed
+   }
+}
